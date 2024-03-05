@@ -1,2 +1,3 @@
 class Agreement < ApplicationRecord
+
 end
