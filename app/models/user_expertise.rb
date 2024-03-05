@@ -1,0 +1,2 @@
+class UserExpertise < ApplicationRecord
+end
