@@ -1,0 +1,34 @@
+# create_messages references
+
+    create_table :messages do |t|
+     t.references :receiver, null: false
+      t.references :sender, null: false
+
+      t.references :request, null: false, foreign_key: true
+
+    # Add these two lines
+    add_foreign_key :messages, :users, column: :receiver_id
+    add_foreign_key :messages, :users, column: :sender_id
+
+
+    create_table :user_expertises do |t|
+      t.references :user, null: false, foreign_key: true # null is that it is a required field
+      t.references :expertise, null: false, foreign_key: true
+
+----
+    create_table :requests do |t|
+      t.reference :expertise, null: false, foreign_key: true
+      t.reference :user, null: false, foreign_key: true
+
+
+    create_table :feedbacks do |t|
+      t.reference :request, null: false, foreign_key: true
+
+
+        create_table :agreements do |t|
+      t.references :request, null: false, foreign_key: true
+
+
+          create_table :user_interests do |t|
+      t.references :user, null: false, foreign_key: true
+      t.references :expertise, null: false, foreign_key: true
