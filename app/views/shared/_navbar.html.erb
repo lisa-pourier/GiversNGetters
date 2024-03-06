@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<div class="navbar navbar-expand-sm navbar-light  fixed-top">
   <div class="container-fluid">
     <%# LOGO %>
     <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
@@ -9,17 +9,15 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <%= link_to "Find a Giver", "#", class: "nav-button" %>
 
+
+      <input type="text" class="search-bar" placeholder="Search...">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
+
+          <li class="nav-item-dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             </a>
@@ -31,19 +29,14 @@
             </div>
           </li>
         <% else %>
+         <div class="nav-item">
+
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav-button" %>
+        <%= link_to "Login", new_user_session_path, class: "nav-button" %>
+      </div>
         <% end %>
       </ul>
 
-      <%= link_to "Find a Giver", "#", class: "nav-button" %>
-
-      <%# SEARCH %>
-      <input type="text" class="search-bar" placeholder="Search...">
-
-      <%# SIGN UP %>
-      <div class="auth-buttons">
-        <%= link_to "Sign Up", new_user_registration_path, class: "auth-button" %>
-        <%= link_to "Login", new_user_session_path, class: "auth-button" %>
-      </div>
     </div>
   </div>
 </div>
