@@ -1,2 +1,3 @@
 class AgreementsController < ApplicationController
+  
 end
