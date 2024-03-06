@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
+    <%# LOGO %>
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://bcassetcdn.com/social/ohq0a35nms/preview.png" %>
     <% end %>
@@ -9,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
@@ -21,6 +22,7 @@
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             </a>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -28,17 +30,15 @@
             </div>
           </li>
         <% else %>
-          <!-- Removed the first login -->
         <% end %>
       </ul>
 
-      <!-- Givers & Getters button to the left -->
-      <%= link_to "Givers & Getters", "#", class: "nav-button" %>
+      <%= link_to "See all Givers", "#", class: "nav-button" %>
 
-      <!-- Search bar in the middle -->
-      <input type="text" class="search-bar" placeholder="Search">
+      <%# SEARCH %>
+      <input type="text" class="search-bar" placeholder="Search...">
 
-      <!-- Signup and login to the right -->
+      <%# SIGN UP %>
       <div class="auth-buttons">
         <%= link_to "Sign Up", "#", class: "auth-button" %>
         <%= link_to "Login", new_user_session_path, class: "auth-button" %>
