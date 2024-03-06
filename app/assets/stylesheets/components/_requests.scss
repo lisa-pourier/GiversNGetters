@@ -1,0 +1,29 @@
+.requests-container {
+  width: 50%;
+  margin-left: 10%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2 {
+  text-align: left;
+}
+
+.requests-summary,
+.requests-details {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.requests-submit {
+  background-color: #FF9843;
+  color: #1F1300;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
