@@ -1,12 +1,78 @@
-.navbar-lewagon {
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Background color for demonstration */
+}
+
+.navbar {
+  background-color: #2A4579;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
+  height: 40px;
+  background-color: #FF9843;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  background-color: #FF9843;
+  color: #1F1300;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+  filter: brightness(1.2);
+}
+
+.search-bar {
+  background-color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto; /* Center the search bar */
+  width: 200px;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.auth-button {
+  background-color: #FF9843;
+  color: #1F1300;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-button:hover {
+  filter: brightness(1.2);
 }
