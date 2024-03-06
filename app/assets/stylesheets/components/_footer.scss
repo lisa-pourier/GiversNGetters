@@ -1,14 +1,40 @@
+/* app/assets/stylesheets/application.scss */
+
 body {
-  margin-bottom: 60px;
+  margin-bottom: 60px; /* Adjust the value based on your footer height */
 }
 
 .footer-container {
   background-color: #2A4579;
   padding: 15px;
   width: 100%;
-  color: #fff;
+  color: #fff; /* Text color for demonstration */
   text-align: center;
   position: fixed;
   bottom: 0;
-  z-index: 1000;
+  z-index: 1000; /* Ensure the footer is above other content */
+}
+
+.footer-container p {
+  margin-bottom: 10px;
+}
+
+.footer-container div {
+  margin-top: 10px;
+}
+
+.footer-container li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-container a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
 }
