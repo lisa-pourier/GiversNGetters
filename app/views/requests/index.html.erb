@@ -1,6 +1,8 @@
+<div class="centered-header">
+  <h1>All Requests</h1>
+
 <% @requests.each do |request| %>
-  <div class="new-request-form-group">
-    <h1>All Requests</h1>
+  <div class="new-request-form">
     <h3><%= request.title %></h3>
     <p>User ID: <%= request.user_id %></p>
     <p>Description: <%= request.description %></p>
@@ -8,3 +10,4 @@
   </div>
 
 <% end %>
+</div>
