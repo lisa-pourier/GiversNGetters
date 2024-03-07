@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :user_expertises
   has_many :user_interests
   has_many :expertises, through: :user_expertises
-  has_many :expertises, through: :user_interests
+  has_many :interest_expertises, through: :user_interests, source: :expertise
 end

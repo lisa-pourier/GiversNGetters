@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :new, :create]
   get '/requests', to: 'requests#index'
   get 'search', to: 'pages#search'
+
+
+  resources :users, only: [:index, :show]
+  get '/users', to: 'users#index'
+  get '/users/id', to: 'users#show'
+
 end
