@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.nav-button {
+.nav-button, .nav-button2, .nav-button3 {
   background-color: #FF9843;
   color: #1F1300;
   padding: 10px 20px;
@@ -15,6 +15,13 @@
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  margin-right: 10px;
+}
+
+.navbar-buttons {
+  display: flex;
+  margin-left: 200px;
+  gap: 10px;
 }
 
 .navbar .navbar-collapse {
