@@ -11,6 +11,7 @@
 # db/seeds.rb
 UserExpertise.destroy_all
 UserInterest.destroy_all
+Request.destroy_all
 User.destroy_all
 Expertise.destroy_all
 
