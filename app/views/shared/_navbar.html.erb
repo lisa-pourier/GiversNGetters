@@ -10,9 +10,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   <div class="navbar-buttons">
-   <%= link_to "Find a Giver", "#", class: "nav-button" %>
-   <%= link_to "Ask For Help", "#", class: "nav-button2" %>
-   <%= link_to "All Requests", "#", class: "nav-button3" %>
+   <%= link_to "Find Givers&Getters", "/users", class: "nav-button" %>
+   <%= link_to "Ask For Help", "/requests/new", class: "nav-button2" %>
+   <%= link_to "All Requests", "/requests", class: "nav-button3" %>
   </div>
 
       <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
