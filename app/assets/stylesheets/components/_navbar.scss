@@ -1,8 +1,9 @@
-
 .navbar {
   background-color: #2A4579;
   padding: 15px;
   justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .nav-button {
@@ -20,14 +21,11 @@
   flex-grow: 0;
 }
 
-
 .navbar-brand img {
   width:  60px;
   height: 60px;
   border-radius: 100%;
 }
-
-
 
 .nav-button:hover {
   filter: brightness(1.2);
