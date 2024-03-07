@@ -14,10 +14,9 @@ Rails.application.routes.draw do
   get '/requests', to: 'requests#index'
   get 'search', to: 'pages#search'
 
-
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   get '/users', to: 'users#index'
   get '/users/id', to: 'users#show'
   get '/profile', to: 'users#profile', as: 'user_profile'
-
+  get '/profile/edit', to: 'users#edit', as: 'edit_user_profile'
 end
