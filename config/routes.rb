@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :new, :create]
   get '/requests', to: 'requests#index'
   get 'search', to: 'pages#search'
-
 end
