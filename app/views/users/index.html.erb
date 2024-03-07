@@ -1,0 +1,29 @@
+<h1>this is the users index page</h1>
+
+<div class="container">
+
+   <% @users.each do |user| %>
+  <div class="usercard">
+    <div class="flexcontainer">
+      <div class="usercardleft flex-item">
+      <%# <h2>Username</h2> %>
+        <p>Image section</p>
+        <p><%= user.username %></p>
+      </div>
+
+      <div class="usercardright flex-item">
+        <%# <h2>Userprofile</h2> %>
+          <h3>About Me</h3>
+          <p><%= user.about_me %></p>
+          <h3>Expertise</h3>
+          <p></p>
+          <%# <% @user.user_expertise.each do |user_expertise| %>
+          <%# <li><%= user.user_expertise.expertises.name %>
+          <h3>Reviews</h3>
+          <p>⭐️⭐️⭐️⭐️⭐️</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
