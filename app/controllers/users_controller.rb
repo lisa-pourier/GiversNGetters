@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def profile
+    @user = current_user
+  end
+
   # def new
   #   @user = User.new
   # end
