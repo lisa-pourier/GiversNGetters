@@ -1,6 +1,6 @@
 <%= form_for(@request) do |f| %>
   <div class="new-request-form-group">
-    <h2>New Request</h1>
+    <h2>New Request</h2>
     <h5>What kind of help do you need?</h2>
     <%= f.label :expertise_id %>
     <%= f.select :expertise_id, options_from_collection_for_select(Expertise.all, 'id', 'name'), {}, { class: 'form-control' }  %>
