@@ -12,7 +12,11 @@
     <%= link_to "Find a Giver", "#", class: "nav-button" %>
 
 
-      <input type="text" class="search-bar" placeholder="Search...">
+      <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search...🔍" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>

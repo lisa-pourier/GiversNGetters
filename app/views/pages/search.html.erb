@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<% if @results.empty? %>
+  <p>No search results for "<%= params[:query] %>"</p>
+<% else %>
+  <% @results.each do |result| %>
+    <p><%= result.username %></p>
+  <% end %>
+<% end %>
