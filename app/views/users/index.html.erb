@@ -1,18 +1,20 @@
-<h1>this is the users index page</h1>
+<%# <h1>this is the users index page</h1> %>
 
 <div class="container">
 
 <% @users.each do |user| %>
+
     <div class="usercard">
       <div class="flex-container">
 
-        <div class="usercardleft flex-item">
+        <div class="usercardleft flex-item-left">
         <%# <h2>Username</h2> %>
           <p>Image section</p>
-          <p><%= user.username %></p>
+          <p><strong><%= user.username %></strong></p>
+           <%=link_to "More About Giver", user_path(user)%>
         </div>
 
-        <div class="usercardright flex-item">
+        <div class="usercardright flex-item-right">
           <%# <h2>Userprofile</h2> %>
             <h3>About Me</h3>
             <p><%= user.about_me %></p>
