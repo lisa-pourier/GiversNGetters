@@ -1,18 +1,9 @@
-/* app/assets/stylesheets/application.scss */
-
-body {
-  margin-bottom: 60px; /* Adjust the value based on your footer height */
-}
-
 .footer-container {
   background-color: #2A4579;
   padding: 15px;
   width: 100%;
-  color: #fff; /* Text color for demonstration */
+  color: #fff;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  z-index: 1000; /* Ensure the footer is above other content */
 }
 
 .footer-container p {
@@ -37,4 +28,11 @@ body {
 
 .footer-container a:hover {
   text-decoration: underline;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
