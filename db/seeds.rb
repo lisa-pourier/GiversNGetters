@@ -40,25 +40,12 @@ household = Expertise.create(name: "Household")
 personal_development = Expertise.create(name: "Personal Development")
 finance = Expertise.create(name: "Finance")
 
-# lisa_pourier.expertises << household
-# lisa_pourier.expertises << personal_development
-# lisa_pourier.expertises << finance
 
-# puts (lisa_pourier.expertises)
 
 UserExpertise.create(user: lisa_pourier, expertise: household)
 UserExpertise.create(user: lisa_pourier, expertise: personal_development)
-# UserExpertise.create(user_id: lisa_pourier, expertise_id: finance)
+
 UserInterest.create(user: lisa_pourier, expertise: finance)
-# UserInterest.create(user_id: lisa_pourier.id, expertise_id: finance.id)
 
-# UserExpertise.create(user_id: dogus_akyuz, expertise_id: household)
-# UserExpertise.create(user_id: dogus_akyuz, expertise_id: finance)
-
-# UserInterest.create(user_id: dogus_akyuz, expertise_id: personal_development)
-
-# UserExpertise.create(user_id: robertomaria_ferrara, expertise_id: personal_development)
-
-# UserInterest.create(user_id: robertomaria_ferrara, expertise_id: finance)
 
 puts 'Finished!'
