@@ -1,1 +1,40 @@
-<h1>this is the users showpage</h1>
+<%# <h1>this is the users showpage</h1> %>
+
+<div class="container">
+
+    <div class="usercard">
+      <div class="flex-container">
+
+        <div class="usercardleft flex-item-left">
+        <%# <h2>Username</h2> %>
+          <p>Image section</p>
+          <p><strong><%= @user.username %></strong></p>
+        </div>
+
+        <div class="usercardright flex-item-right">
+          <%# <h2>Userprofile</h2> %>
+            <h3>About Me</h3>
+            <p><%= @user.about_me %></p>
+
+            <h3>Expertise</h3>
+            <% if @user.expertises.count > 0 %>
+              <% @user.expertises.each do |expertise| %>
+              <p><%= expertise.name %></p>
+              <% end %>
+            <% end %>
+
+            <h3>Interest</h3>
+            <% if @user.interest_expertises.count > 0 %>
+              <% @user.interest_expertises.each do |interest| %>
+              <p><%= interest.name %></p>
+              <% end %>
+            <% end %>
+
+            <h3>Reviews</h3>
+            <p>⭐️⭐️⭐️⭐️⭐️</p>
+
+        </div>
+      </div>
+    </div>
+
+</div>
