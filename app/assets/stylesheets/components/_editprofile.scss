@@ -1,0 +1,50 @@
+.edit-profile-form {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  color: #1F1300;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.edit-profile-buttons {
+  text-align: center;
+  padding: 20px;
+}
+
+.primary-button {
+  background-color: #FF9843;
+  color: #1F1300;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button:hover {
+  filter: brightness(1.2);
+}
+
+.centered-header {
+  text-align: center;
+  color: #1F1300;
+}
