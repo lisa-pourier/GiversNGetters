@@ -15,7 +15,7 @@ Request.destroy_all
 User.destroy_all
 Expertise.destroy_all
 
-
+# All the Users
 puts 'Creating users...'
 lisa_pourier = User.new(username: "Lisa Pourier", email: "lisapourier@gmail.com", password: "123456", about_me: "I am a sunny person who loves to help people in any way I can.
   Sometimes I need to help too,
@@ -37,16 +37,47 @@ robertomaria_ferrara = User.new(username: "Robertomaria Ferrara", email: "robyor
   I've been working as a cook for most of my life and recently I've decided to study programming")
 robertomaria_ferrara.save!
 
-household = Expertise.create(name: "Household")
+# All the Expertises
+interior_design = Expertise.create(name: "Interior Design")
 personal_development = Expertise.create(name: "Personal Development")
 finance = Expertise.create(name: "Finance")
+history = Expertise.create(name: "History")
+theatre = Expertise.create(name: "Theatre")
+languages = Expertise.create(name: "Languages")
+coding = Expertise.create(name: "Coding")
+computer_hardware = Expertise.create(name: "Computer Hardware")
+music = Expertise.create(name: "Music")
+gaming = Expertise.create(name: "Gaming")
 
-
-
-UserExpertise.create(user: lisa_pourier, expertise: household)
+# Lisa Expertise & Interests
+UserExpertise.create(user: lisa_pourier, expertise: interior_design)
 UserExpertise.create(user: lisa_pourier, expertise: personal_development)
 
 UserInterest.create(user: lisa_pourier, expertise: finance)
+UserInterest.create(user: lisa_pourier, expertise: interior_design)
+UserInterest.create(user: lisa_pourier, expertise: coding)
 
+# Dogus Expertise & Interests
+# expertise: history, theatre
+# interest: languages, history, coding
+UserExpertise.create(user: dogus_akyuz, expertise: history)
+UserExpertise.create(user: dogus_akyuz, expertise: theatre)
+
+UserInterest.create(user: dogus_akyuz, expertise: languages)
+UserInterest.create(user: dogus_akyuz, expertise: history)
+UserInterest.create(user: dogus_akyuz, expertise: coding)
+
+# Rob Expertise & Interests
+# expertise: computer hardware, coding , music, gaming
+# interest: computer hardware, coding , music, gaming
+UserExpertise.create(user: robertomaria_ferrara, expertise: computer_hardware)
+UserExpertise.create(user: robertomaria_ferrara, expertise: coding)
+UserExpertise.create(user: robertomaria_ferrara, expertise: music)
+UserExpertise.create(user: robertomaria_ferrara, expertise: gaming)
+
+UserInterest.create(user: robertomaria_ferrara, expertise: computer_hardware)
+UserInterest.create(user: robertomaria_ferrara, expertise: coding)
+UserInterest.create(user: robertomaria_ferrara, expertise: music)
+UserInterest.create(user: robertomaria_ferrara, expertise: gaming)
 
 puts 'Finished!'
