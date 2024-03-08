@@ -6,10 +6,12 @@
   align-items: center;
 }
 
-.nav-button, .nav-button2, .nav-button3 {
+.nav-button, .nav-button2 {
+  display: flex;
+  flex-direction: row;
   background-color: #FF9843;
   color: #1F1300;
-  padding: 10px 20px;
+  padding: 5px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -20,7 +22,7 @@
 
 .navbar-buttons {
   display: flex;
-  margin-left: 200px;
+  margin-left: 0px;
   gap: 10px;
 }
 
@@ -36,4 +38,30 @@
 
 .nav-button:hover {
   filter: brightness(1.2);
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.search-bar {
+  display: flex;
+  gap: 5px;
+  width: 300px;
+  height: 40px;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 16px;
+}
+.search-bar input[type="submit"] {
+  background-color: #FF9843;
+  color: #1F1300; // adjust as needed, this is for the text color
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
 }
