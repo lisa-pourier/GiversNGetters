@@ -5,5 +5,6 @@
 <% else %>
   <% @results.each do |result| %>
     <p><%= result.username %></p>
+    <%= link_to 'View Profile', user_path(result), class: 'btn btn-primary button-blue' %>
   <% end %>
 <% end %>
