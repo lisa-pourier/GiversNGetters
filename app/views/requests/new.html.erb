@@ -1,30 +1,30 @@
-<%= form_for(@request) do |f| %>
-  <div class="new-request-form">
+  <div class="centered-header">
     <h2>New Request</h2>
+
+<%= form_for(@request) do |f| %>
+  <div class="request-form">
     <h5>What kind of help do you need?</h2>
     <%= f.label :expertise_id %>
     <%= f.select :expertise_id, options_from_collection_for_select(Expertise.all, 'id', 'name'), {}, { class: 'form-control' }  %>
   </div>
 
-  <div class="new-request-form">
+  <div class="request-form">
     <h5>Describe your request</h2>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="new-request-form">
+  <div class="request-form">
     <h5>How would you like to show appreciation?</h2>
-    <%= f.label :description %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
-  <div class="new-request-form">
-    <h5>Anything else you want to share?</h2>
-    <%= f.label :description %>
+  <div class="request-form">
+    <h5>More information about your request?</h2>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
-  <div class="new-request-buttons">
+  <div class="request-buttons">
     <%= link_to 'Back to All Requests', requests_path, class: 'secondary-button' %>
     <%= f.submit 'Create Request', class: 'primary-button' %>
 

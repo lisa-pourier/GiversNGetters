@@ -1,0 +1,13 @@
+<div class="centered-header">
+  <h1>Request Details</h1>
+
+  <div class="request-form">
+    <h3><%= @request.title %></h3>
+    <p>Getter: <%= @request.user.username %></p>
+    <p>Description: <%= @request.description %></p>
+  </div>
+
+  <div class="request-buttons">
+    <%= link_to 'Back to All Requests', requests_path, class: 'secondary-button' %>
+  </div>
+</div>
