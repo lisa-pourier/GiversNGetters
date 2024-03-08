@@ -7,11 +7,10 @@
   background-color: white;
   color: #1F1300;
 
-
-
   label {
     display: block;
     margin-bottom: 5px;
+    text-decoration: none;
   }
 
   input[type="text"],
@@ -20,7 +19,13 @@
     padding: 10px;
     box-sizing: border-box;
   }
+
+  h3 a {
+    text-decoration: none;
+    color: #1F1300;
+  }
 }
+
 
 .request-buttons{
   text-align: center;
