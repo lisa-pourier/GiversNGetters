@@ -1,0 +1,19 @@
+<!-- app/views/requests/my_requests.html.erb -->
+
+<div class="request-form">
+  <h1 class="centered-header">My Requests</h1>
+
+  <% @requests.each do |request| %>
+    <div class="request-details">
+      <h2><%= request.title %></h2>
+      <p><%= request.description %></p>
+
+
+    </div>
+  <% end %>
+
+  <div class="request-buttons">
+    <%= link_to "New Request", new_request_path, class: "primary-button" %>
+    <%= link_to 'Delete Request', request_path(request), method: :delete, data: { confirm: 'Are you sure?' }, class: "secondary-button" %>
+  </div>
+</div>
