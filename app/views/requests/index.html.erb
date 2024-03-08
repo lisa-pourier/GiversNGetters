@@ -6,8 +6,9 @@
     <h3><%= request.title %></h3>
     <p>User ID: <%= request.user_id %></p>
     <p>Description: <%= request.description %></p>
-    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
   </div>
-
 <% end %>
 </div>
+<div class="new-request-buttons">
+    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
+ </div>
