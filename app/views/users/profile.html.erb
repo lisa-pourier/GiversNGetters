@@ -1,4 +1,35 @@
 <h1>My Profile</h1>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<div class="usercard">
+  <div class="flex-container">
 
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
+    <div class="usercardleft flex-item-left">
+      <p>Image section</p>
+      <p><strong><%= @user.username %></strong></p>
+      <p>Email: <%= @user.email %></p>
+    </div>
+
+    <div class="usercardright flex-item-right">
+      <h3>About Me</h3>
+      <p><%= @user.about_me %></p>
+
+      <h3>Expertise</h3>
+      <% if @user.expertises.count > 0 %>
+        <% @user.expertises.each do |expertise| %>
+        <p><%= expertise.name %></p>
+        <% end %>
+      <% end %>
+
+      <h3>Interest</h3>
+      <% if @user.interest_expertises.count > 0 %>
+        <% @user.interest_expertises.each do |interest| %>
+        <p><%= interest.name %></p>
+        <% end %>
+      <% end %>
+
+      <h3>Reviews</h3>
+      <p>⭐️⭐️⭐️⭐️⭐️</p>
+
+    </div>
+  </div>
+</div>
