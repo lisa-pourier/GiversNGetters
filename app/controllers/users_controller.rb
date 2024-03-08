@@ -4,9 +4,24 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  # initially had this method, but adjusted it to below to show the logged in user's requests in the dropdown when in the user's show page
+
+  # def show
+  #   @user = User.find(params[:id])
+  # end
+
+  # then used this and it worked for the display on 1 user card, the card of the logged in user, BUT not when trying to iterate
+
   def show
     @user = User.find(params[:id])
+    # @users = User.all
+    if params[:request_id].present?
+      @requests = @user.requests.where(id: params[:request_id])
+    else
+      @requests = @user.requests
+    end
   end
+
 
   def profile
     @user = current_user

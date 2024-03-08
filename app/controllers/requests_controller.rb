@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
 
     if @request.save
       flash[:success] = "Request successfully created!"
+      # redirect_to @requests
       redirect_to requests_path
     else
       render :new

@@ -7,8 +7,24 @@
 
         <div class="usercardleft flex-item-left">
         <%# <h2>Username</h2> %>
+          <h3>Ask for Help</h3>
           <p>Image section</p>
           <p><strong><%= @user.username %></strong></p>
+          <div class="select-user">
+
+            <div class="user-profile-card">
+              <h3><%= @user.username %></h3>
+              <%= form_with(url: user_path(@user), method: :get) do |f| %>
+              <div class="select-request-form">
+              <p>Select Request:</p>
+              <%= f.select :request_id, current_user.requests.map { |r| [r.title, r.id] }, prompt: 'All Your Open Requests', html: {class:"form-select w-auto"} %>
+              <%= f.submit 'Submit' %>
+              </div>
+              <% end %>
+            </div>
+
+
+          </div>
         </div>
 
         <div class="usercardright flex-item-right">
