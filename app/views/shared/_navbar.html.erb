@@ -3,7 +3,7 @@
     <%# LOGO %>
     <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
       <%= image_tag "GGLogo.png" %>
-      <span class="navbar-title">Givers&Getters</span>
+
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,15 +11,16 @@
     </button>
   <div class="navbar-buttons">
 
-   <%= link_to "Find Givers&Getters", "/users", class: "nav-button" %>
-   <%= link_to "Ask For Help", "/requests/new", class: "nav-button2" %>
-   <%= link_to "All Requests", "/requests", class: "nav-button3" %>
-  </div>
 
-      <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search...🔍" %>
-  <%= submit_tag "Search" %>
-<% end %>
+   <%= link_to "Get Help", "/requests/new", class: "nav-button" %>
+   <%= link_to "Give Help", "/requests", class: "nav-button2" %>
+  </div>
+<div class="search-container">
+  <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "search-input" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
