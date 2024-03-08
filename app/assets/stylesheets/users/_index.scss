@@ -21,13 +21,21 @@
   align-items: center;
 }
 
-.usercardleft{
-  width: 400px;
-}
+// .usercardleft{
+//   width: 400px;
+// }
 
 .flex-item-left, .flex-item-right {
   margin: 20px;
   flex-grow: 1;
+}
+
+.usercardleft{
+  width: 20%;
+}
+
+.usercardright{
+  width: 80%;
 }
 
 h3 {

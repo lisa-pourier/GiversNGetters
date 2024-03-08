@@ -80,4 +80,8 @@ UserInterest.create(user: robertomaria_ferrara, expertise: coding)
 UserInterest.create(user: robertomaria_ferrara, expertise: music)
 UserInterest.create(user: robertomaria_ferrara, expertise: gaming)
 
+# User Requests
+Request.create(user: lisa_pourier, expertise: interior_design, title: "Looking for a mentor in interior design", description: "I am looking for help", status: false)
+Request.create(user: dogus_akyuz, expertise: coding, title: "Looking for a mentor in coding", description: "I am looking for help", status: false)
+
 puts 'Finished!'
