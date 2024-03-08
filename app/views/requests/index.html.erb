@@ -1,14 +1,15 @@
 <div class="centered-header">
   <h1>All Requests</h1>
 
-<% @requests.each do |request| %>
-  <div class="new-request-form">
-    <h3><%= request.title %></h3>
-    <p>User ID: <%= request.user_id %></p>
-    <p>Description: <%= request.description %></p>
-  </div>
-<% end %>
+  <% @requests.each do |request| %>
+    <div class="request-form">
+      <h3><%= link_to request.title, request_path(request) %></h3>
+      <p>User ID: <%= request.user_id %></p>
+      <p>Description: <%= request.description %></p>
+    </div>
+  <% end %>
 </div>
-<div class="new-request-buttons">
-    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
- </div>
+
+<div class="request-buttons">
+  <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
+</div>

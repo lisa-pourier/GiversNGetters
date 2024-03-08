@@ -1,6 +1,12 @@
-.new-request-form {
+.request-form {
   width: 50%;
-  margin: 0 auto 20px;
+  margin: 0 auto 20px;;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: white;
+  color: #1F1300;
+
 
   label {
     display: block;
@@ -15,7 +21,7 @@
   }
 }
 
-.new-request-buttons{
+.request-buttons{
   text-align: center;
   padding: 20px;
 }
@@ -52,5 +58,10 @@
 
 .centered-header {
   text-align: center;
-  margin: 20px 0;
+  color: #1F1300;
+}
+
+.request-details{
+  width: 50%;
+  margin: 0 auto 20px;
 }
