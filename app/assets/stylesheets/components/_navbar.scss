@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.nav-button, .nav-button2 {
+.nav-button {
   display: flex;
   flex-direction: row;
   background-color: #FF9843;
@@ -20,15 +20,26 @@
   margin-right: 10px;
 }
 
+.navbar-buttons-and-search {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
 .navbar-buttons {
   display: flex;
-  margin-left: 0px;
   gap: 10px;
 }
 
-.navbar .navbar-collapse {
-  flex-grow: 0;
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 350px;
 }
+
+// .navbar .navbar-collapse {f
+//   flex-grow: 0;
+// }
 
 .navbar-brand img {
   width:  65px;
@@ -49,7 +60,7 @@
 .search-bar {
   display: flex;
   gap: 5px;
-  width: 300px;
+  width: 400px;
   height: 40px;
 }
 
@@ -64,4 +75,8 @@
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 5px;
+}
+
+.avatar {
+  margin-left: 300px;
 }
