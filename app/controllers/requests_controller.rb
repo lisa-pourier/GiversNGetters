@@ -23,7 +23,14 @@ class RequestsController < ApplicationController
     else
       render :new
     end
+
   end
+
+  def my_requests
+    @requests = current_user.requests
+  end
+
+
 
   private
 

@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/users/id', to: 'users#show'
   get '/profile', to: 'users#profile', as: 'user_profile'
   get '/profile/edit', to: 'users#edit', as: 'edit_user_profile'
+  get '/my_requests', to: 'requests#my_requests', as: 'my_requests'
 end
