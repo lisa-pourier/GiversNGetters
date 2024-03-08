@@ -59,3 +59,22 @@ body {
 
   }
 }
+
+.button-blue {
+  background-color: #2A4579; //button color
+  border: none;
+  color: #1F1300;  //button text color
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #1d4081;
+
+  }
+}
