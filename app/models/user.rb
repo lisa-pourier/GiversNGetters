@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   has_many :requests
   has_many :messages
-  has_many :agreements, through: :requests
+  has_many :agreements # these are the agreements that the user has received
+  has_many :agreements_submitted, through: :requests, source: :agreements # these are the agreements that the user has submitted
   has_many :feedbacks, through: :requests
 
   has_many :user_expertises
