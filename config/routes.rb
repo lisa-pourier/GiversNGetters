@@ -20,4 +20,13 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'user_profile'
   get '/profile/edit', to: 'users#edit', as: 'edit_user_profile'
   get '/my_requests', to: 'requests#my_requests', as: 'my_requests'
+
+  resources :agreements, only: [:index, :new, :create, :show]
+  get '/dashboard', to: 'pages#dashboard'
+  get '/agreements', to: 'agreements#new'
+  get '/agreements', to: 'agreements#create'
+  # get '/dashboard', to: 'dashboard#show', as: 'dashboard' # to: 'agreements#show'
+
+  # get '/my_agreements', to: 'agreements#my_agreements', as: 'my_agreements'
+
 end

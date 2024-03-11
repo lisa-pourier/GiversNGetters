@@ -7,4 +7,11 @@ class PagesController < ApplicationController
   def search
     @results = User.where("username ILIKE ?", "%#{params[:query]}%")
   end
+
+  def dashboard
+    @agreements_submitted = current_user.agreements_submitted
+    @agreements_received = current_user.agreements
+    # @requests = Request.all
+  end
+
 end
