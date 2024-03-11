@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
     @messages = Message.where(receiver: current_user) + Message.where(sender: current_user)
   end
 
+  def show
+    @message = Message.find(params[:id])
+  end
+
   def new
     @message = Message.new
     @users = User.all
@@ -17,6 +21,12 @@ class MessagesController < ApplicationController
       render :new
       # raise
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_to messages_path, notice: 'Message was successfully deleted.'
   end
 
   private

@@ -1,11 +1,14 @@
-<h1>Send A Message</h1>
+<div class="message-header">
+  <h1>Send A Message</h1>
+</div>
+<div class="message-form">
+  <%= form_with(model: @message, local: true) do |form| %>
+    <%= form.text_area :content %>
 
-<%= form_with(model: @message, local: true) do |form| %>
-  <%= form.text_area :content %>
+    <%= form.label :receiver_id, "Select User" %>
+    <%= form.collection_select :receiver_id, @users, :id, :email %>
 
-  <%= form.label :receiver_id, "Select User" %>
-  <%= form.collection_select :receiver_id, @users, :id, :email %>
-
-  <%= form.hidden_field :sender_id, value: current_user.id %>
-  <%= form.submit %>
-<% end %>
+    <%= form.hidden_field :sender_id, value: current_user.id %>
+    <%= form.submit %>
+  <% end %>
+</div>
