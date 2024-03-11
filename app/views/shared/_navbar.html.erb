@@ -12,14 +12,9 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-<% if controller_name == 'users' || controller_name == 'requests' %>
-  <div class="navbar-search">
-    <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
-      <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "search-input" %>
-      <%= submit_tag "Search" %>
-    <% end %>
-  </div>
-<% end %>
+
+
+
 
 
     <div class="collapse <%= user_signed_in? ? "navbar-collapse" : "d-flex" %>" id="navbarSupportedContent">

@@ -20,10 +20,6 @@
   margin-right: 10px;
 }
 
-.navbar-search {
-  display: flex;
-
-}
 
 .navbar-buttons {
   display: flex;
@@ -56,30 +52,7 @@
 }
 
 
-.search-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.search-bar {
-  display: flex;
-  gap: 5px;
-  width: 550px;
-  height: 40px;
-}
 
-.search-input {
-  width: 100%;
-  font-size: 16px;
-}
-.search-bar input[type="submit"] {
-  background-color: #FF9843;
-  color: #1F1300;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 5px;
-}
 
 .nav-item {
   display: flex;
