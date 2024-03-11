@@ -5,6 +5,11 @@
     <h3><%= @request.title %></h3>
     <p>Getter: <%= @request.user.username %></p>
     <p>Description: <%= @request.description %></p>
+     <% if @suggestion.nil? %>
+    <p>Suggestions: no suggestions..</p>
+  <% else %>
+    <p>Suggestions: <%= @suggestion.username %></p>
+  <% end %>
   </div>
 
   <div class="request-buttons">
