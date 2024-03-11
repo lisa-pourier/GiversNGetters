@@ -1,31 +1,28 @@
 <div class="navbar navbar-expand-sm navbar-light  sticky-top">
   <div class="container-fluid">
     <%# LOGO %>
-    <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
-      <%= image_tag "GGLogo4.png" %>
+    <div class="logo-and-buttons">
+      <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
+        <%= image_tag "GGLogo5.png" %>
+      <% end %>
 
-    <% end %>
+
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-  <div class="navbar-buttons-and-search">
-   <div class="navbar-buttons">
-   <%= link_to "Get Help", "/requests/new", class: "nav-button" %>
-   <%= link_to "Give Help", "/requests", class: "nav-button" %>
+<% if controller_name == 'users' || controller_name == 'requests' %>
+  <div class="navbar-search">
+    <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "search-input" %>
+      <%= submit_tag "Search" %>
+    <% end %>
   </div>
-<div class="search-container">
-  <%= form_with(url: search_path, method: :get, local: true, html: { class: "search-bar" }) do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "search-input" %>
-    <%= submit_tag "Search" %>
-  <% end %>
-  </div>
-</div>
+<% end %>
 
 
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse <%= user_signed_in? ? "navbar-collapse" : "d-flex" %>" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
 

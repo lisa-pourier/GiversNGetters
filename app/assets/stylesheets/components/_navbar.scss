@@ -20,10 +20,9 @@
   margin-right: 10px;
 }
 
-.navbar-buttons-and-search {
+.navbar-search {
   display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+
 }
 
 .navbar-buttons {
@@ -34,12 +33,17 @@
 .search-container {
   display: flex;
   justify-content: center;
-  margin-left: 250px;
 }
 
-// .navbar .navbar-collapse {f
-//   flex-grow: 0;
-// }
+.logo-and-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
 
 .navbar-brand img {
   width:  65px;
@@ -70,20 +74,14 @@
 }
 .search-bar input[type="submit"] {
   background-color: #FF9843;
-  color: #1F1300; // adjust as needed, this is for the text color
+  color: #1F1300;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 5px;
 }
 
-.avatar {
-  margin-left: 250px;
-}
-
 .nav-item {
   display: flex;
-  flex-direction: row;
   gap: 10px;
-  margin-left: 250px;
 }
