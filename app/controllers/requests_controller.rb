@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @suggestion = User.all.filter { |user| user.expertises.include?(@request.expertise) && user.id != current_user.id }.sample
   end
 
   def new
