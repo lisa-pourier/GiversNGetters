@@ -41,3 +41,27 @@
 h3 {
   color: #2A4579;
 }
+
+
+.users-search-bar {
+  display: flex;
+  gap: 5px;
+  width: 550px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 600px;
+
+}
+
+.users-search-input {
+  width: 100%;
+  font-size: 16px;
+}
+.users-search-bar input[type="submit"] {
+  background-color: #FF9843;
+  color: #1F1300;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}

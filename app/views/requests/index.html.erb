@@ -1,3 +1,9 @@
+<div class="requests-search">
+<%= form_tag(requests_path, method: :get, local: true, html: { class: "requests-search-bar" }) do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Requests 🔍", class: "requests-search-input" %>
+  <%= submit_tag "Search" %>
+<% end %>
+</div>
 <div class="centered-header">
   <h1>All Requests</h1>
 

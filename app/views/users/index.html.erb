@@ -1,6 +1,13 @@
 <%# <h1>this is the users index page</h1> %>
 
+<div class="users-search">
+    <%= form_with(url: search_path, method: :get, local: true, html: { class: "users-search-bar" }) do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "users-search-input" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
 <div class="container">
+
 
 <% @users.each do |user| %>
 

@@ -5,7 +5,7 @@ body {
 
 
 .logo {
-  background-image: asset-url('GiversNGetters.jpg');
+  background-image: asset-url('GNGBacknoQuote.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -39,6 +39,13 @@ body {
   text-align: center;
   padding: 20px;
   color: #1F1300;   //text color
+}
+
+.button-container-home {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
 }
 
 .button {
