@@ -9,8 +9,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @agreements_submitted = current_user.agreements_submitted
-    @agreements_received = current_user.agreements
+    # @agreements_submitted = current_user.agreements
+    # @agreements_received = current_user.requests.flat_map do |request|
+    #   request.agreements
+    # end
     # @requests = Request.all
   end
 

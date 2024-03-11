@@ -9,6 +9,7 @@
 #   end
 
 # db/seeds.rb
+Agreement.destroy_all
 UserExpertise.destroy_all
 UserInterest.destroy_all
 Request.destroy_all

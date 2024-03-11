@@ -19,13 +19,15 @@ class AgreementsController < ApplicationController
   end
 
   def create
-    @agreement = Agreement.new(agreement_params)
+    @agreement = Agreement.new(status: 'pending', request_id: params[:agreement][:request_id], sender_id: params[:agreement][:sender_id], receiver_id: params[:agreement][:receiver_id])
     if @agreement.save
-      redirect_to @agreement # change to redirect to dashboard
-    else
-      render 'new'
+      redirect_to action:'dashboard', controller: "pages"# change to redirect to dashboard
     end
   end
 
+  private
 
+  def request_params
+    params.require(:agreement).permit(:sender_id, :receiver_id, :request_id)
+  end
 end

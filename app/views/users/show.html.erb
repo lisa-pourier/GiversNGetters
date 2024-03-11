@@ -14,13 +14,8 @@
 
             <div class="user-profile-card">
               <h3><%= @user.username %></h3>
-              <%= form_with(url: user_path(@user), method: :get) do |f| %>
-              <div class="select-request-form">
-              <p>Select Request:</p>
-              <%= f.select :request_id, current_user.requests.map { |r| [r.title, r.id] }, prompt: 'All Your Open Requests', html: {class:"form-select w-auto"} %>
-              <%= f.submit 'Submit' %>
-              </div>
-              <% end %>
+
+              <%= render 'agreements/new' %>
             </div>
 
 

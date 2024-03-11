@@ -1,16 +1,32 @@
 <h1>Dashboard Page</h1>
 
-<h3>Submitted Requests/Agreements</h3>
-<div>
-  <p>Pending List</p>
-  <ul>
-    <li></li>
-  </ul>
-  <p>Accepted List</p>
-  <p>Rejected List</p>
+<div class="submitted-requests">
+<h3>Submitted Requests</h3>
+  <div>
+    <%# <p>Pending List</p>
+    <p>Accepted List</p>
+    <p>Rejected List</p> %>
+  <% if current_user.sent_agreements.any?  %>
+    <% current_user.sent_agreements.each do |agreement| %>
+    <p><%= agreement.request.title %></p>
+     <p><%= agreement.status %></p>
+    <% end %>
+  <% end %>
+  </div>
 </div>
 
-<h3>Received Requests/Agreements</h3>
-<div>
-  <p></p>
+
+<div class="received-requests">
+<h3>Received Requests</h3>
+  <div>
+    <%# <p>Pending List</p>
+    <p>Accepted List</p>
+    <p>Rejected List</p> %>
+  <% if current_user.received_agreements.any?  %>
+    <% current_user.received_agreements.each do |agreement| %>
+    <p><%= agreement.request.title %></p>
+     <p><%= agreement.status %></p>
+    <% end %>
+  <% end %>
+  </div>
 </div>
