@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_11_122120) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_152324) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,10 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_122120) do
   create_table "match_suggestions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.bigint "expertise_id", null: false
-    t.index ["expertise_id"], name: "index_match_suggestions_on_expertise_id"
-    t.index ["user_id"], name: "index_match_suggestions_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -81,7 +77,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_122120) do
     t.datetime "updated_at", null: false
     t.bigint "receiver_id", null: false
     t.bigint "sender_id", null: false
-    t.bigint "request_id", null: false
+    t.bigint "request_id"
+    t.text "content"
     t.index ["receiver_id"], name: "index_messages_on_receiver_id"
     t.index ["request_id"], name: "index_messages_on_request_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
@@ -135,8 +132,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_122120) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "agreements", "requests"
   add_foreign_key "feedbacks", "requests"
-  add_foreign_key "match_suggestions", "expertises"
-  add_foreign_key "match_suggestions", "users"
   add_foreign_key "messages", "requests"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"

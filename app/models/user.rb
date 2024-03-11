@@ -14,4 +14,7 @@ class User < ApplicationRecord
   has_many :user_interests
   has_many :expertises, through: :user_expertises
   has_many :interest_expertises, through: :user_interests, source: :expertise
+
+  has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id'
+  has_many :received_messages, class_name: 'Message', foreign_key: 'receiver_id'
 end
