@@ -1,6 +1,10 @@
 class RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests = if params[:search]
+                  Request.where('title ILIKE ?', "%#{params[:search]}%")
+                else
+                  Request.all
+                end
   end
 
   def show
@@ -10,6 +14,7 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
   end
+
 
   def create
     @request = Request.new(request_params)
