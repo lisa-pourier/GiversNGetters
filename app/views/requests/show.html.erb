@@ -3,13 +3,13 @@
 
   <div class="request-form">
     <h3><%= @request.title %></h3>
-    <p>Getter: <%= @request.user.username %></p>
+    <p>Getter: <%= link_to @request.user.username, user_path(@request.user) %></p>
     <p>Description: <%= @request.description %></p>
      <% if @suggestion.nil? %>
-    <p>Suggestions: no suggestions..</p>
-  <% else %>
-    <p>Suggestions: <%= @suggestion.username %></p>
-  <% end %>
+      <p>Suggestions: no suggestions..</p>
+    <% else %>
+      <p>Suggestions: <%= link_to @suggestion.username, user_path(@suggestion) %></p>
+    <% end %>
   </div>
 
   <div class="request-buttons">
