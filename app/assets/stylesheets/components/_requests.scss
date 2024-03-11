@@ -20,12 +20,11 @@
     box-sizing: border-box;
   }
 
-  h3 a {
+  a {
     text-decoration: none;
     color: #1F1300;
   }
 }
-
 
 .request-buttons{
   text-align: center;
@@ -56,6 +55,7 @@
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+
 }
 
 .secondary-button:hover {
@@ -71,16 +71,3 @@
   width: 50%;
   margin: 0 auto 20px;
 }
-
-.requests-search {
-  display: flex;
-  gap: 5px;
-  width: 550px;
-  height: 40px;
-  margin-top: 20px;
-  margin-left: 600px;
-}
- .requests-search-input {
-  width: 450px;
-  font-size: 16px;
- }

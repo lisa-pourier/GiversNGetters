@@ -40,6 +40,18 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+.secondary-button {
+  background-color: #2A4579;
+  color: #E9F1F7;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
 .primary-button:hover {
   filter: brightness(1.2);
 }

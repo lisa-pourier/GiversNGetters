@@ -1,0 +1,12 @@
+<div class="message-header">
+  <h1>Messages</h1>
+</div>
+<div class="message-index">
+  <% @messages.each do |message| %>
+    <p>
+      <strong>Message Content:</strong>
+      <%= message.content %>
+    </p>
+    <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>

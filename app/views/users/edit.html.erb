@@ -41,12 +41,14 @@
         <%= interest.text_field :name, class: 'form-control' %>
       <% end %>
     </div>
+    <% end %>
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
+    <%= f.submit 'Update Profile', class: 'primary-button' %>
+  </div>
+<% end %>
 
-    <div class="form-group">
-      <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
-      <%= f.submit 'Update Profile', class: 'primary-button' %>
-    </div>
-  <% end %>
 
 
 </div>
