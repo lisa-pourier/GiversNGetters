@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/agreements', to: 'agreements#new'
   get '/agreements', to: 'agreements#create'
   # get '/dashboard', to: 'dashboard#show', as: 'dashboard' # to: 'agreements#show'
-  resources :messages, only: [:index, :new, :create]
+  resources :messages, only: [:index, :new, :create, :destroy, :show]
 
   # get '/my_agreements', to: 'agreements#my_agreements', as: 'my_agreements'
 
