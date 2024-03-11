@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @agreement = Agreement.new
+
     # @users = User.all
     if params[:request_id].present?
       @requests = @user.requests.where(id: params[:request_id])
