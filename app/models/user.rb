@@ -6,8 +6,12 @@ class User < ApplicationRecord
 
   has_many :requests
   has_many :messages
-  has_many :agreements # these are the agreements that the user has received
-  has_many :agreements_submitted, through: :requests, source: :agreements # these are the agreements that the user has submitted
+  # these are the agreements that the user has received
+  has_many :received_agreements, class_name: 'Agreement', foreign_key: 'receiver_id'
+
+  # these are the agreements that the user has submitted
+  has_many :sent_agreements, class_name: 'Agreement', foreign_key: 'sender_id'
+
   has_many :feedbacks, through: :requests
 
   has_many :user_expertises
@@ -17,5 +21,7 @@ class User < ApplicationRecord
 
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id'
   has_many :received_messages, class_name: 'Message', foreign_key: 'receiver_id'
+
   has_one_attached :avatar
+
 end

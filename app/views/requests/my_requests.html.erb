@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="request-buttons">
-    <%= link_to "New Request", new_request_path, class: "primary-button" %>
     <%= link_to 'Delete Request', request_path(request), method: :delete, data: { confirm: 'Are you sure?' }, class: "secondary-button" %>
+    <%= link_to "New Request", new_request_path, class: "primary-button" %>
   </div>
 </div>

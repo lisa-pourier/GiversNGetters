@@ -49,7 +49,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_152324) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
+    t.index ["receiver_id"], name: "index_agreements_on_receiver_id"
     t.index ["request_id"], name: "index_agreements_on_request_id"
+    t.index ["sender_id"], name: "index_agreements_on_sender_id"
   end
 
   create_table "expertises", force: :cascade do |t|
@@ -131,6 +135,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_152324) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "agreements", "requests"
+  add_foreign_key "agreements", "users", column: "receiver_id"
+  add_foreign_key "agreements", "users", column: "sender_id"
   add_foreign_key "feedbacks", "requests"
   add_foreign_key "messages", "requests"
   add_foreign_key "messages", "users", column: "receiver_id"
