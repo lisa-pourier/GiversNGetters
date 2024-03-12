@@ -4,6 +4,8 @@
       <%= f.select :request_id, current_user.requests.map { |r| [r.title, r.id] }, prompt: 'All Your Open Requests', html: {class:"form-select w-auto"} %>
       <%= f.hidden_field :sender_id, value: current_user.id %>
       <%= f.hidden_field :receiver_id, value: @user.id %>
-      <%= f.submit 'Submit' %>
+      <%= f.submit 'Submit', class: 'btn btn-secondary' %></button>
     </div>
 <% end %>
+
+<%# <button type="button" class="btn btn-secondary">Select Request:</button> %>
