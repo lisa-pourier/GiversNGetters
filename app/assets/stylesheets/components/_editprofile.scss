@@ -67,3 +67,12 @@
   margin-bottom: 20px;
   margin-right: 20px;
 }
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+}
