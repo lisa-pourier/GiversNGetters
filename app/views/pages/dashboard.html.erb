@@ -10,10 +10,10 @@
   <% if current_user.sent_agreements.any?  %>
     <% current_user.sent_agreements.each do |agreement| %>
     <div class="card-white">
-    <p><%= agreement.request.title %></p>
-     <p><%= agreement.status %></p>
+    <h4><%= agreement.request.title %></h4>
      <% if agreement.receiver %>
-     <p>giver: <%= agreement.receiver.username%></p>
+     <p><strong>Giver:</strong> <%= agreement.receiver.username%></p>
+     <p><strong>request status: </strong><%= agreement.status %></p>
      <% else %>
      <%= link_to "Find a Giver", user_path %>
       <% end %>
@@ -33,11 +33,13 @@
   <% if current_user.received_agreements.any?  %>
     <% current_user.received_agreements.each do |agreement| %>
     <div class="card-white">
-    <p><%= agreement.request.title %></p>
-     <p>getter: <%= agreement.sender.username%></p>
-     <p>request status: <%= agreement.status %></p>
-      <%= button_to "ACCEPT", accept_agreement_path(agreement), {class: "btn btn-success"}%>
-     <%= button_to "REJECT", reject_agreement_path(agreement), {class: "btn btn-danger"}%>
+    <h4><%= agreement.request.title %></h4>
+     <p><strong>Getter:</strong> <%= agreement.sender.username%></p>
+     <p><strong>request status:</strong> <%= agreement.status %></p>
+     <div class="buttons">
+      <%= button_to "ACCEPT", accept_agreement_path(agreement), {class: "btn btn-success", disabled: agreement.status == 'accepted'}%>
+     <%= button_to "REJECT", reject_agreement_path(agreement), {class: "btn btn-danger", disabled: agreement.status == 'rejected'}%>
+    </div>
   </div>
     <% end %>
   <% end %>
