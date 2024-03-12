@@ -1,9 +1,9 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="centered-header"> <h2>Edit Profile</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="edit-profile-form">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -11,34 +11,36 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                placeholder: "Please leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                placeholder: "We need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
 
     <%= f.input :about_me, required: false, input_html: { class: 'form-control' } %>
 
-    <%= f.label :expertise_ids %>
+    <%= f.label :Expertises %>
     <%= f.collection_select :expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
 
-    <%= f.label :interest_ids %>
+    <%= f.label :Interests %>
     <%= f.collection_select :interest_expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
 
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="form-group">
+    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
+    <%= f.button :submit, "Update", class: 'primary-button'%>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+<div class="form-group-align-right">
+  <form action="<%= registration_path(resource_name) %>" method="post">
+    <%= hidden_field_tag "_method", :delete %>
+    <%= button_tag "Cancel my account", type: 'submit', data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" } %>
+  </form>
+</div>
