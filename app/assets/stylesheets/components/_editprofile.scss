@@ -39,6 +39,9 @@
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: #FFA500;
+  }
 }
 
 .secondary-button {
