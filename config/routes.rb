@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   get '/agreements', to: 'agreements#new'
   get '/agreements', to: 'agreements#create'
+
+  post '/agreements/:id/accept', to: 'agreements#accept', as: :accept_agreement
+  post '/agreements/:id/reject',  to: 'agreements#reject', as: :reject_agreement
   # get '/dashboard', to: 'dashboard#show', as: 'dashboard' # to: 'agreements#show'
   resources :messages, only: [:index, :new, :create, :destroy, :show]
 

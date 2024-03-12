@@ -1,0 +1,30 @@
+body {
+  // font-family: 'Caveat', cursive;
+  font-size: 15px;
+  font-weight: light;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Adjust as needed */
+}
+
+.card-white {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: center;
+  min-height: 200px;
+  min-width: 600px;
+}
