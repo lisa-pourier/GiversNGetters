@@ -24,11 +24,12 @@
 
     <%= f.input :about_me, required: false, input_html: { class: 'form-control' } %>
 
+    <%= f.label :expertise_ids %>
     <%= f.collection_select :expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
 
-    <%= f.simple_fields_for :interest_expertises do |interest| %>
-      <%= interest.input :name, label: 'Interest', required: false, input_html: { class: 'form-control' } %>
-    <% end %>
+    <%= f.label :interest_ids %>
+    <%= f.collection_select :interest_expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
+
   </div>
 
   <div class="form-actions">
