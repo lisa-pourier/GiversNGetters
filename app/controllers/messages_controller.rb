@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @messages = Message.where(receiver: current_user) + Message.where(sender: current_user)
+
   end
 
   def show
@@ -10,6 +11,7 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @users = User.all
+    @requests = Request.all
   end
 
   def create
@@ -32,6 +34,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :sender_id, :receiver_id)
+    params.require(:message).permit(:content, :sender_id, :receiver_id, :request_id)  # Add :request_id
   end
 end
