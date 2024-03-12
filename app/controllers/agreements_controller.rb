@@ -3,6 +3,20 @@ class AgreementsController < ApplicationController
   # submitted agreements (pending, accepted, rejected status?);
   # what about received agreements? (pending, accepted, rejected status?)
 
+  def accept
+    @agreement = Agreement.find(params[:id])
+    @agreement.status = 'accepted'
+    @agreement.save
+    redirect_to action: 'dashboard', controller: "pages"
+  end
+
+  def reject
+    @agreement = Agreement.find(params[:id])
+    @agreement.status = 'rejected'
+    @agreement.save
+    redirect_to action: 'dashboard', controller: "pages"
+  end
+
   def index
     @agreements = Agreement.all
     render template: '/dashboard'

@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [ :home, :search ]
+  before_action :authenticate_user!, only: [:dashboard]
 
   def home
   end
@@ -9,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @current_user = current_user
     # @agreements_submitted = current_user.agreements
     # @agreements_received = current_user.requests.flat_map do |request|
     #   request.agreements
