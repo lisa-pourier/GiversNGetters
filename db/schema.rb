@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_152324) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +74,10 @@
   create_table "match_suggestions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "expertise_id", null: false
+    t.index ["expertise_id"], name: "index_match_suggestions_on_expertise_id"
+    t.index ["user_id"], name: "index_match_suggestions_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -137,6 +142,8 @@
   add_foreign_key "agreements", "users", column: "receiver_id"
   add_foreign_key "agreements", "users", column: "sender_id"
   add_foreign_key "feedbacks", "requests"
+  add_foreign_key "match_suggestions", "expertises"
+  add_foreign_key "match_suggestions", "users"
   add_foreign_key "messages", "requests"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"

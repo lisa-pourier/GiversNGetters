@@ -1,7 +1,15 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 
   <%= f.label :avatar %>
   <%= f.file_field :avatar %>
 
-  <%= f.submit %>
+  <%= f.submit "Sign Up" %>
 <% end %>
