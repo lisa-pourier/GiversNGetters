@@ -1,12 +1,44 @@
 <div class="message-header">
   <h1>Messages</h1>
 </div>
+
 <div class="message-index">
-  <% @messages.each do |message| %>
+<h2>Received Messages</h2>
+ <div class="received-messages-container">
+
+  <% @messages.select { |message| message.receiver == current_user }.each do |message| %>
+    <p>
+      <strong>Sender:</strong>
+      <%= message.sender.username %>
+    </p>
+    <p>
+      <strong>Request:</strong>
+      <%= message.request.title if message.request %>
+    </p>
     <p>
       <strong>Message Content:</strong>
       <%= message.content %>
     </p>
     <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+  </div>
+  <h2>Sent Messages</h2>
+ <div class="sent-messages-container">
+
+  <% @messages.select { |message| message.sender == current_user }.each do |message| %>
+    <p>
+      <strong>Receiver:</strong>
+      <%= message.receiver.username %>
+    </p>
+    <p>
+      <strong>Request:</strong>
+      <%= message.request.title if message.request %>
+    </p>
+    <p>
+      <strong>Message Content:</strong>
+      <%= message.content %>
+    </p>
+    <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>
 </div>
