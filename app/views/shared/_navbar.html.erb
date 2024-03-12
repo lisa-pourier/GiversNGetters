@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%# LOGO %>
     <div class="logo-and-buttons">
-      <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "GGLogo5.png" %>
       <% end %>
     </div>
@@ -19,7 +19,7 @@
               <% if current_user.persisted? && current_user.avatar.attached? %>
                 <%= cl_image_tag current_user.avatar.key, class: "avatar", alt: "dropdown menu" %>
               <% else %>
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+                <%= image_tag "https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif", class: "avatar", alt: "dropdown menu" %>
               <% end %>
             </a>
 
