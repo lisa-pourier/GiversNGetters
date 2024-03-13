@@ -16,7 +16,7 @@
 
         <div class="usercardleft flex-item-left">
         <%# <h2>Username</h2> %>
-          <p>Image section</p>
+          <%= image_tag url_for(user.avatar), alt: user.username, size: "200x200" if user.avatar.attached? %>
           <p><strong><%= user.username %></strong></p>
            <%=link_to "More About Giver", user_path(user)%>
         </div>
