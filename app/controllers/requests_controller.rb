@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
     @request.save
 
     if @request.save
-      redirect_to requests_path, notice: 'Request successfully created!'
+      redirect_to request_path(@request), notice: 'Request successfully created!'
     else
       render :new
     end
