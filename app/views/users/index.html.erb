@@ -1,8 +1,14 @@
 <%# <h1>this is the users index page</h1> %>
+
+<%# <div class="container-title">
+
+</div> %>
+
 <div class="container">
 <div class="centered-header">
   <h3>All Givers & Getters</h3>
 </div>
+
 
 <div class="users-search">
     <%= form_with(url: search_path, method: :get, local: true, html: { class: "users-search-bar" }) do %>
@@ -12,7 +18,8 @@
   </div>
 
 
-
+<div class="container">
+<h1>All Givers & Getters</h1>
 <% @users.each do |user| %>
 
     <div class="usercard">
@@ -42,7 +49,7 @@
             <h3>Interest</h3>
             <% if user.interest_expertises.count > 0 %>
               <% user.interest_expertises.each do |interest| %>
-              <p><%= interest.name %></p>
+              <p><i data-feather="fe-star-o"><%= interest.name %></p>
               <% end %>
             <% end %>
 

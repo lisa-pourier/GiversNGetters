@@ -9,6 +9,9 @@
 <% end %>
 </div>
 
+<div class="centered-header">
+  <h1>All Requests</h1>
+
   <% @requests.each do |request| %>
     <div class="request-form">
       <h5><%= link_to request.title, request_path(request) %></h5>
