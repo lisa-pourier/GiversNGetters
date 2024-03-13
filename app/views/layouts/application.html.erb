@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
@@ -15,6 +16,10 @@
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
+       <script src="https://unpkg.com/feather-icons"></script>
+      <script>
+        feather.replace()
+      </script>
     </div>
   <%= render "shared/footer" %>
   </body>

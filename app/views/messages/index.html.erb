@@ -1,9 +1,9 @@
 <div class="message-header">
-  <h1>Messages</h1>
+  <h1>My Messages</h1>
 </div>
 
 <div class="message-index">
-<h2>Received Messages</h2>
+<h3>Received Messages</h3>
  <div class="received-messages-container">
 
   <% @messages.select { |message| message.receiver == current_user }.each do |message| %>
@@ -22,7 +22,7 @@
     <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
   </div>
-  <h2>Sent Messages</h2>
+  <h3>Sent Messages</h3>
  <div class="sent-messages-container">
 
   <% @messages.select { |message| message.sender == current_user }.each do |message| %>
