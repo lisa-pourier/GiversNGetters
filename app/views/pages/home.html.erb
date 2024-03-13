@@ -5,29 +5,27 @@
 
 </head>
 
-<body>
+  <body>
 
-<div class="logo">
-    <div class="header-home">
-        <h1>Givers&Getters</h1>
-    </div>
-    <div class="content-home">
-      <p>Welcome to Givers&Getters,</p>
-      <p> a unique platform designed to foster a community of mutual support and collaboration.</p>
-      <p> Whether you're seeking assistance or eager to lend a helping hand, our platform connects individuals based on their specific needs and expertise.</p>
-      <p> From offering guidance in specialized fields to extending a helping hand in everyday tasks, Givers&Getters facilitates meaningful connections that enrich lives.</p>
-      <p> Join us in creating a culture of giving and receiving, where every act of kindness makes a difference.</p>
-    </div>
-    <div class="button-container-home">
+    <div class="logo">
+      <div class="header-home">
+         <h1>Givers & Getters</h1>
+      </div>
+      <div class="content-home">
+      <%# <p>Welcome to Givers&Getters,</p> %>
+        <h3> A platform for Generous People</h3>
+        <p> Where those who are in need of help can find people willing to help.</p>
+      </div>
+      <div class="button-container-home">
 
        <%= link_to "Get Help", "/requests/new", class: "button-blue" %>
         <%= link_to "Give Help", "/requests", class: "button" %>
-</div>
+    </div>
     <%# <div class="round-card">
     <h2>Are you a Giver or a Getter?</h2>
     <p>find help or share your skills and knowledge in order to provide help</p>
     </div> %>
 
     </div>
-</body>
+  </body>
 </html>
