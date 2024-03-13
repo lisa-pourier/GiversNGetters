@@ -5,10 +5,13 @@
     <h5><%= @request.title %></h5>
     <p>Getter: <%= link_to @request.user.username, user_path(@request.user) %></p>
     <p>Description: <%= @request.description %></p>
-     <% if @suggestion.nil? %>
-      <p>Suggestions: no suggestions..</p>
+    <p>Suggestions:</p>
+    <% if @experts.empty? %>
+      <p>No suggestions..</p>
     <% else %>
-      <p>Suggestions: <%= link_to @suggestion.username, user_path(@suggestion) %></p>
+      <% @experts.each do |expert| %>
+        <p><%= link_to expert.username, user_path(expert) %></p>
+      <% end %>
     <% end %>
   </div>
 
