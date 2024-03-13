@@ -73,13 +73,24 @@
   margin: 0 auto 20px;
 }
 
-.requests-search {
+.requests-search-bar {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  input[type="search"] {
-    width: 550px;
-    height: 40px;
-  }
+  gap: 5px;
+  width: 60%;
+  height: 35px;
+  margin: auto;
+}
+
+.requests-search-input {
+  width: 100%;
+  font-size: 16px;
+}
+
+.requests-search-bar input[type="submit"] {
+  background-color: #FF9843;
+  color: #1F1300;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
 }
