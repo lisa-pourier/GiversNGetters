@@ -1,10 +1,12 @@
 <%# <h1>this is the users index page</h1> %>
 <div class="container">
-<h3>All Givers & Getters</h3>
+<div class="centered-header">
+  <h3>All Givers & Getters</h3>
+</div>
 
 <div class="users-search">
     <%= form_with(url: search_path, method: :get, local: true, html: { class: "users-search-bar" }) do %>
-      <%= text_field_tag :query, params[:query], placeholder: "Search...🔍", class: "users-search-input" %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search All Givers&Getters...🔍", class: "users-search-input" %>
       <%= submit_tag "Search" %>
     <% end %>
   </div>

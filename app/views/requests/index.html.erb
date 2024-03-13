@@ -1,11 +1,13 @@
-<div class="requests-search">
-<%= form_tag(requests_path, method: :get, local: true, html: { class: "requests-search-bar" }) do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Requests 🔍", class: "requests-search-input" %>
+
+<div class="centered-header">
+  <h3>All Requests</h3>
+
+  <div class="requests-search-bar">
+<%= form_with(url: requests_path, method: :get, local: true, html: { class: "requests-search-bar" }) do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search All Requests... 🔍", class: "requests-search-input" %>
   <%= submit_tag "Search" %>
 <% end %>
 </div>
-<div class="centered-header">
-  <h3>All Requests</h3>
 
   <% @requests.each do |request| %>
     <div class="request-form">
