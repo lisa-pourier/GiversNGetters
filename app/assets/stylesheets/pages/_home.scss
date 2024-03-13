@@ -1,12 +1,8 @@
-// body {
-//   font-family: Arial, sans-serif;
-//   background-color: #E9F1F7;
-// }
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   height: 100vh;
   margin: 0;
 }
@@ -27,9 +23,6 @@ body {
   text-align: center;
   padding: 20px;
   color: #FF9843;
-  h1 {
-    // font-family: 'Madimi One', cursive;
-  }
 }
 
 .content-home {
@@ -40,30 +33,20 @@ body {
   text-align: center;
   color: #FF9843;
   h3 {
-    // font-family: 'Madimi One', cursive;
     color: #f8dcd0;
-    font-size: 2em;
+    font-size: 2.6em;
     text-align: center;
     margin-top: 100px;
   }
   p {
-    // font-family: 'Madimi One', cursive;
     color: #f8dcd0;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 
-// .button-container-home {
-//   position: absolute;
-//   bottom: 480px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   display: flex;
-//   justify-content: center;
-//   gap: 10px;
-// }
+
 
 .button-container-home {
   display: flex;
@@ -95,9 +78,9 @@ body {
 }
 
 .button-blue {
-  background-color: #2A4579; //button color
+  background-color: #2A4579;
   border: none;
-  color: #f8dcd0;  //button text color
+  color: #f8dcd0;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
