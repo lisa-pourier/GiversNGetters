@@ -7,9 +7,12 @@
   <div class="flex-container">
 
     <div class="usercardleft flex-item-left">
+    <div class="profile-pic">
     <%= image_tag url_for(@user.avatar), alt: @user.username, size: "200x200" if @user.avatar.attached? %>
+    </div>
       <p><strong><%= @user.username %></strong></p>
       <p>Email: <%= @user.email %></p>
+
     </div>
 
     <div class="usercardright flex-item-right">

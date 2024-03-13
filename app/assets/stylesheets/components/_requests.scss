@@ -72,3 +72,14 @@
   width: 50%;
   margin: 0 auto 20px;
 }
+
+.requests-search {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  input[type="search"] {
+    width: 550px;
+    height: 40px;
+  }
+}
