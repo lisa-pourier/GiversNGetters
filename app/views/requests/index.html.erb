@@ -9,8 +9,7 @@
 <% end %>
 </div>
 
-<div class="centered-header">
-  <h1>All Requests</h1>
+
 
   <% @requests.each do |request| %>
     <div class="request-form">
@@ -29,4 +28,3 @@
   <div class="request-buttons">
     <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
   </div>
-</div>

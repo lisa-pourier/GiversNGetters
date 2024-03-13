@@ -1,10 +1,10 @@
 class RequestsController < ApplicationController
   def index
-    @requests = if params[:search]
-                  Request.where('title ILIKE ?', "%#{params[:search]}%")
-                else
-                  Request.all
-                end
+    if params[:query].present?
+      @requests = Request.where('title LIKE ?', "%#{params[:query]}%")
+    else
+      @requests = Request.all
+    end
   end
 
   def show
@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
     @request.save
 
     if @request.save
-      redirect_to requests_path, notice: 'Request successfully created!'
+      redirect_to request_path(@request), notice: 'Request successfully created!'
     else
       render :new
     end
