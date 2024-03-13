@@ -24,9 +24,7 @@ class RequestsController < ApplicationController
     @request.save
 
     if @request.save
-      flash[:success] = "Request successfully created!"
-      # redirect_to @requests
-      redirect_to requests_path
+      redirect_to requests_path, notice: 'Request successfully created!'
     else
       render :new
     end

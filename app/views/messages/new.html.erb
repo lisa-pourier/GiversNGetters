@@ -13,6 +13,6 @@
     <%= form.collection_select :request_id, @requests, :id, :title %>
 
     <%= form.hidden_field :sender_id, value: current_user.id %>
-    <%= form.submit %>
+    <%= form.submit%>
   <% end %>
 </div>
