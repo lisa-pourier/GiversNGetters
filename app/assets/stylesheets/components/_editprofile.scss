@@ -79,3 +79,15 @@
 .form-group {
   flex: 1;
 }
+
+
+.form-group select {
+  width: 80%;
+  padding: 10px;
+}
+
+.form-group-align-right button {
+  border-radius: 5px;
+  background-color: #8A9BB8;
+  color: #E9F1F7;
+}
