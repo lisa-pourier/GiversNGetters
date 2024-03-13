@@ -4,14 +4,23 @@
   // border: 2px solid #000;
 }
 
+.btn-grey {
+  background-color: grey !important;
+}
+
 .profile-pic-show img{
   width: 100%;
   height: auto;
   border-radius: 50%;
-  margin: 20px;
+  // margin: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.profile-pic-show {
+  text-align: center;
 }
 
 .profile-pic img{
@@ -23,6 +32,14 @@
   box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
 }
 
+.dark-blue {
+  color:#2A4579;
+}
+
+.light-blue {
+  color:#FF9843;
+}
+
 .usercard {
   // width: 300px;
   display: flex;
@@ -31,7 +48,7 @@
   margin-bottom: 20px;
   // border: 2px solid black;
   background-color: white;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
 .flex-container {
