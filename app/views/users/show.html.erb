@@ -8,9 +8,9 @@
         <div class="usercardleft flex-item-left">
         <%# <h2>Username</h2> %>
           <h3>Ask for Help</h3>
-         <div class="profile-pic-show">
-          <%= image_tag url_for(@user.avatar), alt: @user.username, size: "200x200" if @user.avatar.attached? %>
-         </div>
+       <div class="profile-pic-show">
+          <%= image_tag (@user.avatar.attached? ? url_for(@user.avatar) : 'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif'), alt: @user.username, size: "200x200" %>
+      </div>
           <p><strong><%= @user.username %></strong></p>
           <div class="select-user">
 
