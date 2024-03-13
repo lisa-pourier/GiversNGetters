@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @users = User.all
     if @message.save
-      redirect_to messages_path(user_id: @message.receiver_id)
+      redirect_to messages_path(user_id: @message.receiver_id), notice: 'Message successfully sent.'
     else
       render :new
       # raise
