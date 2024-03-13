@@ -1,9 +1,9 @@
 <div class="footer-container">
   <div class="policies">
     <ul>
-      <p>&copy; 2024 GIVERS & GETTERS. All rights reserved.</p>
-      <li><%= 'Terms & Conditions' %></li>
-      <li><%= 'Privacy Policy' %></li>
+      <li>&copy; 2024 GIVERS & GETTERS. All rights reserved.</li>
+      <li><% @output_buffer.append=(link_to('Terms & Conditions', terms_path).to_s); %></li>
+      <li><% @output_buffer.append=(link_to('Privacy Policy', privacy_path).to_s); %></li>
     </ul>
   </div>
   <div class="social-icons">

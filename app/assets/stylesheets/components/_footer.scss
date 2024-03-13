@@ -7,7 +7,7 @@ body {
 
 .footer-container {
   background-color: #2A4579;
-  padding: 15px;
+  padding: 10px; /* Reduce padding */
   width: 100%;
   color: #fff;
   text-align: center;
@@ -22,29 +22,20 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 40px;
-}
-
-.policies ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 20px; /* Reduce padding */
 }
 
 .policies li {
   display: inline;
-  margin-right: 20px;
+  margin-right: 10px; /* Reduce margin */
 }
 
 .policies a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 20px;
-}
-
-.policies a:hover {
-  text-decoration: underline;
+  margin-right: 10px; /* Reduce margin */
+  font-size: 14px; /* Reduce font size */
 }
 
 .social-icons {
@@ -53,7 +44,7 @@ body {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 40px;
+  padding-right: 20px; /* Reduce padding */
 }
 
 .social-icons a {
@@ -62,5 +53,5 @@ body {
 }
 
 .social-icons i {
-  font-size: 24px;
+  font-size: 20px; /* Reduce font size */
 }

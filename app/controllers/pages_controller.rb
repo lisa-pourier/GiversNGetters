@@ -19,4 +19,10 @@ class PagesController < ApplicationController
     # @requests = Request.all
   end
 
+  def terms
+  end
+
+  def privacy
+  end
+
 end

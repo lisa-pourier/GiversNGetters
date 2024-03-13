@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   # get '/dashboard', to: 'dashboard#show', as: 'dashboard' # to: 'agreements#show'
   resources :messages, only: [:index, :new, :create, :destroy, :show]
   post '/post_signup', to: 'post_signup#create', as: 'post_signup'
+  get 'terms', to: 'pages#terms', as: :terms
+  get 'privacy', to: 'pages#privacy', as: :privacy
 
   # get '/my_agreements', to: 'agreements#my_agreements', as: 'my_agreements'
 
