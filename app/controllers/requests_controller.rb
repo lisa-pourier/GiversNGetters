@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @experts = User.joins(:expertises).where(expertises: { id: @request.expertise_id })
     @suggestion = User.all.filter { |user| user.expertises.include?(@request.expertise) && user.id != current_user.id }.sample
   end
 
@@ -24,7 +25,7 @@ class RequestsController < ApplicationController
     @request.save
 
     if @request.save
-      redirect_to requests_path, notice: 'Request successfully created!'
+      redirect_to request_path(@request), notice: 'Request successfully created!'
     else
       render :new
     end
