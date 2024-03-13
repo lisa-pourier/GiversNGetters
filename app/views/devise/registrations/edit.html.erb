@@ -1,16 +1,12 @@
 <div class="centered-header">
   <h2>Edit Profile</h2>
-
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-
     <div class="edit-profile-form">
       <%= f.input :email, required: true, autofocus: true %>
-
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-
       <%= f.input :password,
                   placeholder: "Please leave it blank if you don't want to change it",
                   required: false,
@@ -22,84 +18,29 @@
                   placeholder: "We need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-
       <%= f.input :about_me, required: false, input_html: { class: 'form-control' } %>
-
       <div class="form-row">
         <div class="form-group">
           <%= f.label :Expertises %>
           <%= f.collection_select :expertise_ids, Expertise.all, :id, :name, {}, { multiple: true } %>
         </div>
-
         <div class="form-group">
           <%= f.label :Interests %>
           <%= f.collection_select :interest_expertise_ids, Expertise.all, :id, :name, {}, { multiple: true } %>
         </div>
       </div>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, class: 'form-control' %>
     </div>
-
     <div class="form-group">
       <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
       <%= f.button :submit, "Update", class: 'primary-button' %>
     </div>
   <% end %>
-
   <div class="form-group-align-right">
     <%= form_tag(registration_path(resource_name), method: :delete) do %>
       <%= hidden_field_tag "_method", :delete %>
       <%= button_tag "Cancel my account", type: 'submit', data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" } %>
     <% end %>
-
   </div>
-
-
-    <%= f.input :password,
-                placeholder: "Please leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                placeholder: "We need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-
-    <%= f.input :about_me, required: false, input_html: { class: 'form-control' } %>
-
-    <div class="form-row">
-      <div class="form-group">
-        <%= f.label :Expertises %>
-        <%= f.collection_select :expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
-      </div>
-
-    <div class="form-group">
-      <%= f.label :Interests %>
-      <%= f.collection_select :interest_expertise_ids, Expertise.all, :id, :name, {}, {multiple: true} %>
-      </div>
-    </div>
-
-
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-
-
-  </div>
-
-  <div class="form-actions">
-    <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
-    <%= f.button :submit, "Update", class: 'primary-button'%>
-
-  </div>
-<% end %>
-
-<div class="form-group-align-right">
-  <form action="<%= registration_path(resource_name) %>" method="post">
-    <%= hidden_field_tag "_method", :delete %>
-    <%= button_tag "Delete My Account", type: 'submit', data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" } %>
-  </form>
-
 </div>
