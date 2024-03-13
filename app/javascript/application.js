@@ -4,7 +4,7 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 
-import feather from 'feather-icons';
-document.addEventListener('turbolinks:load', function() {
-  feather.replace();
-});
+// import feather from 'feather-icons';
+// document.addEventListener('turbolinks:load', function() {
+//   feather.replace();
+// });
