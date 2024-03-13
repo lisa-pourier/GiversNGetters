@@ -1,8 +1,8 @@
 <div class="centered-header">
-  <h1>Request Details</h1>
+  <h3>Request Details</h3>
 
   <div class="request-form">
-    <h3><%= @request.title %></h3>
+    <h5><%= @request.title %></h5>
     <p>Getter: <%= link_to @request.user.username, user_path(@request.user) %></p>
     <p>Description: <%= @request.description %></p>
      <% if @suggestion.nil? %>
