@@ -2,15 +2,15 @@
   <h3>Request Details</h3>
 
   <div class="request-form">
-    <h5><%= @request.title %></h5>
+    <h4><%= @request.title.capitalize %></h4>
     <p>Getter: <%= link_to @request.user.username, user_path(@request.user) %></p>
     <p>Description: <%= @request.description %></p>
-    <p>Suggestions:</p>
+    <p> <i data-feather="share-2" class="orange"></i>&nbsp; &nbsp; Suggestions:</p>
     <% if @experts.empty? %>
       <p>No suggestions..</p>
     <% else %>
       <% @experts.each do |expert| %>
-        <p><%= link_to expert.username, user_path(expert) %></p>
+        <h5><%= link_to expert.username, user_path(expert), class:"orange"  %></h5>
       <% end %>
     <% end %>
   </div>
