@@ -33,7 +33,7 @@ class RequestsController < ApplicationController
   end
 
   def my_requests
-    @requests = current_user.requests
+    @requests = current_user.requests.order(created_at: :desc)
   end
 
 
