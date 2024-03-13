@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :requests
+  has_many :requests, dependent: :destroy
   has_many :messages
   # these are the agreements that the user has received
   has_many :received_agreements, class_name: 'Agreement', foreign_key: 'receiver_id'
