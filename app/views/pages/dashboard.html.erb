@@ -6,10 +6,13 @@
     <% if current_user.sent_agreements.any?  %>
       <% current_user.sent_agreements.sort_by { |agreement| -agreement.request.created_at.to_i }.each do |agreement| %>
         <div class="card-white">
-        <h4><%= link_to agreement.request.title, request_path(agreement.request), style: 'text-decoration: none; color: #1F1300; ' %></h4>
+          <h4><%= link_to agreement.request.title, request_path(agreement.request), style: 'text-decoration: none; color: #1F1300; ' %></h4>
           <% if agreement.receiver %>
             <p>Giver:<%= agreement.receiver.username%></p>
             <p>request status:<%= agreement.status %></p>
+            <%= link_to new_message_path, class: 'btn button' do %>
+              <i data-feather="message-circle"></i>
+            <% end %>
           <% else %>
             <%= link_to "Find a Giver", user_path %>
           <% end %>
@@ -17,7 +20,6 @@
       <% end %>
     <% end %>
   </div>
-
   <h3>Received Requests</h3>
   <div class="received-requests">
     <% if current_user.received_agreements.any?  %>
