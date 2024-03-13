@@ -6,11 +6,11 @@
       <div class="flex-container">
 
         <div class="usercardleft flex-item-left">
-        <%# <h2>Username</h2> %>
+        <h2>Username</h2>
 
-         <div class="profile-pic-show">
+         <%# <div class="profile-pic-show">
           <%= image_tag url_for(@user.avatar), alt: @user.username, size: "200x200" if @user.avatar.attached? %>
-         </div>
+         <%# </div> %>
 
           <h3>Ask for Help</h3>
        <div class="profile-pic-show">
