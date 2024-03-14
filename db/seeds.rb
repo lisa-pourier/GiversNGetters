@@ -26,7 +26,7 @@ lisa_pourier = User.new(username: "Lisa Pourier", email: "lisapourier@gmail.com"
   My interest include Trading & Investing, better understanding myself and learning to code.")
 lisa_pourier.save!
 
-dogus_akyuz = User.new(username: "Dogus Akyuz", email: "av.dogusakyuz@gmail.com", password: "123456", about_me: "My name is Dogus.
+dogus_akyuz = User.new(username: "Dogus  Akyuz", email: "av.dogusakyuz@gmail.com", password: "123456", about_me: "My name is Dogus.
   I'm living in the Netherlands for one year.
   My interests are history, video-games and football.
   I've been working as a legal counsel for 15 years but then I decided to become a software developer.
@@ -64,6 +64,7 @@ UserInterest.create(user: lisa_pourier, expertise: coding)
 # interest: languages, history, coding
 UserExpertise.create(user: dogus_akyuz, expertise: history)
 UserExpertise.create(user: dogus_akyuz, expertise: theatre)
+UserExpertise.create(user: dogus_akyuz, expertise: coding)
 
 UserInterest.create(user: dogus_akyuz, expertise: languages)
 UserInterest.create(user: dogus_akyuz, expertise: history)
@@ -83,7 +84,7 @@ UserInterest.create(user: robertomaria_ferrara, expertise: music)
 UserInterest.create(user: robertomaria_ferrara, expertise: gaming)
 
 # User Requests
-Request.create(user: lisa_pourier, expertise: interior_design, title: "Looking for a mentor in interior design", description: "I am looking for help", status: false)
-Request.create(user: dogus_akyuz, expertise: coding, title: "Looking for a mentor in coding", description: "I am looking for help", status: false)
+# Request.create(user: lisa_pourier, expertise: interior_design, title: "Looking for a mentor in interior design", description: "I am looking for help", status: false)
+# Request.create(user: dogus_akyuz, expertise: coding, title: "Looking for a mentor in coding", description: "I am looking for help", status: false)
 
 puts 'Finished!'
