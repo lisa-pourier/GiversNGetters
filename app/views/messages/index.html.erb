@@ -3,42 +3,49 @@
 </div>
 
 <div class="message-index">
-<h3>Received Messages</h3>
- <div class="received-messages-container">
-
-  <% @messages.select { |message| message.receiver == current_user }.each do |message| %>
-    <p>
-      <strong>Sender:</strong>
-      <%= message.sender.username %>
-    </p>
-    <p>
-      <strong>Request:</strong>
-      <%= message.request.title if message.request %>
-    </p>
-    <p>
-      <strong>Message Content:</strong>
-      <%= message.content %>
-    </p>
-    <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+  <h3>Received Messages</h3>
+  <div class="received-messages-container">
+    <% @messages.select { |message| message.receiver == current_user }.each do |message| %>
+      <div class="message-container">
+        <p>
+          <strong>Sender:</strong>
+          <%= message.sender.username %>
+        </p>
+        <p>
+          <strong>Request:</strong>
+          <%= message.request.title if message.request %>
+        </p>
+        <p>
+          <strong>Message Content:</strong>
+          <%= message.content %>
+        </p>
+        <div style="text-align: right;">
+          <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' }, style: "background-color: #8A9BB8; color: white; border-radius: 5px;" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <h3>Sent Messages</h3>
- <div class="sent-messages-container">
 
-  <% @messages.select { |message| message.sender == current_user }.each do |message| %>
-    <p>
-      <strong>Receiver:</strong>
-      <%= message.receiver.username %>
-    </p>
-    <p>
-      <strong>Request:</strong>
-      <%= message.request.title if message.request %>
-    </p>
-    <p>
-      <strong>Message Content:</strong>
-      <%= message.content %>
-    </p>
-    <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</div>
+  <h3>Sent Messages</h3>
+  <div class="sent-messages-container">
+    <% @messages.select { |message| message.sender == current_user }.each do |message| %>
+      <div class="message-container">
+        <p>
+          <strong>Receiver:</strong>
+          <%= message.receiver.username %>
+        </p>
+        <p>
+          <strong>Request:</strong>
+          <%= message.request.title if message.request %>
+        </p>
+        <p>
+          <strong>Message Content:</strong>
+          <%= message.content %>
+        </p>
+        <div style="text-align: right;">
+          <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' }, style: "background-color: #8A9BB8; color: white; border-radius: 5px;" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

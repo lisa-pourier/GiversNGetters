@@ -1,0 +1,17 @@
+<h1>Chat</h1>
+
+<div id="messages">
+  <% @messages.each do |message| %>
+    <div>
+      <strong><%= message.sender.name %>:</strong>
+      <%= message.content %>
+    </div>
+  <% end %>
+</div>
+
+<%= form_with(url: messages_path) do |form| %>
+  <%= form.hidden_field :receiver_id, value: @receiver.id %>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>

@@ -86,24 +86,16 @@ h1 {
     font-size: 1.2em;
     line-height: 1.5;
   }
+}
 
-  .received-messages-container,
-  .sent-messages-container {
-    background-color: white;
-    padding: 40px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
-    border-radius: 4px;
-    margin: 20px 0px;
-    text-align: center;
-    min-height: 200px;
-    min-width: 600px;
-  }
-
-  .received-messages-container {
-    // Add any specific styles for received messages here
-  }
-
-  .sent-messages-container {
-    // Add any specific styles for sent messages here
-  }
+.message-container {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: center;
+  min-height: 200px;
+  min-width: 600px;
+  margin-bottom: 20px;
 }
