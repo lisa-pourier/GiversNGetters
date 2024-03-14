@@ -6,6 +6,36 @@ body {
   letter-spacing: 1px;
 }
 
+.select-getter {
+  color: #FFC65A;
+  font-size: 20px;
+}
+
+.pending {
+  color: #6c757d;
+  // font-size: 20px;
+}
+
+.accepted {
+  color: #1EDD88;
+  // font-size: 20px;
+}
+
+.rejected {
+  color: #FD1015;
+  // font-size: 20px;
+}
+
+.completed {
+  color: #1F1300;
+  // font-size: 20px;
+}
+
+.text-black{
+  color: black !important;
+  // font-size: 20px;
+}
+
 h1 {
   margin-bottom: 50px;
 }

@@ -1,6 +1,24 @@
 <div class="dashboard-container">
   <h1>My Requests</h1>
 
+  <h3>Submitted Requests (without giver)</h3>
+  <div class="submitted-requests">
+
+      <% @requests_unassigned.each do |request| %>
+        <div class="card-white">
+          <h4><%= link_to request.title, request_path(request), style: 'text-decoration: none; color: #1F1300; ' %></h4>
+
+            <p><p class="select-getter">select a getter to get help</p></p>
+            <%= link_to new_message_path, class: 'btn button' do %>
+              <i data-feather="message-circle"></i>
+            <% end %>
+
+        </div>
+
+    <% end %>
+  </div>
+
+
   <h3>Submitted Requests</h3>
   <div class="submitted-requests">
     <% if current_user.sent_agreements.any?  %>
@@ -8,14 +26,18 @@
         <div class="card-white">
           <h4><%= link_to agreement.request.title, request_path(agreement.request), style: 'text-decoration: none; color: #1F1300; ' %></h4>
           <% if agreement.receiver %>
-            <p>Giver:<%= agreement.receiver.username%></p>
-            <p>request status:<%= agreement.status %></p>
+            <p>Giver: <%= agreement.receiver.username%></p>
+            <p>request status: <span class="<%= agreement.status %>"><%= agreement.status %></span></p>
             <%= link_to new_message_path, class: 'btn button' do %>
               <i data-feather="message-circle"></i>
             <% end %>
           <% else %>
             <%= link_to "Find a Giver", user_path %>
           <% end %>
+          <div class="buttons">
+            <%= button_to "PENDING", pending_agreement_path(agreement), {class: "btn btn-secondary text-black", disabled: agreement.status == 'pending'}%>
+            <%= button_to "COMPLETED", completed_agreement_path(agreement), {class: "btn btn-dark", disabled: agreement.status == 'completed'}%>
+          </div>
         </div>
       <% end %>
     <% end %>
@@ -26,8 +48,11 @@
       <% current_user.received_agreements.sort_by { |agreement| -agreement.request.created_at.to_i }.each do |agreement| %>
         <div class="card-white">
           <h4><%= link_to agreement.request.title, request_path(agreement.request), style: 'text-decoration: none; color: #1F1300; ' %></h4>
-          <p>Getter:<%= agreement.sender.username%></p>
-          <p>request status:<%= agreement.status %></p>
+          <p>Getter: <%= agreement.sender.username%></p>
+          <p>request status: <span class="<%= agreement.status %>"><%= agreement.status %></p>
+          <%= link_to new_message_path, class: 'btn button' do %>
+              <i data-feather="message-circle"></i>
+            <% end %>
           <div class="buttons">
             <%= button_to "ACCEPT", accept_agreement_path(agreement), {class: "btn btn-success", disabled: agreement.status == 'accepted'}%>
             <%= button_to "REJECT", reject_agreement_path(agreement), {class: "btn btn-danger", disabled: agreement.status == 'rejected'}%>

@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   post '/agreements/:id/accept', to: 'agreements#accept', as: :accept_agreement
   post '/agreements/:id/reject',  to: 'agreements#reject', as: :reject_agreement
+  post '/agreements/:id/completed', to: 'agreements#completed', as: :completed_agreement
+  post '/agreements/:id/pending', to: 'agreements#pending', as: :pending_agreement
   # get '/dashboard', to: 'dashboard#show', as: 'dashboard' # to: 'agreements#show'
   resources :messages, only: [:index, :new, :create, :destroy, :show]
   post '/post_signup', to: 'post_signup#create', as: 'post_signup'
