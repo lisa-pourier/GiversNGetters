@@ -19,6 +19,9 @@
           <strong>Message Content:</strong>
           <%= message.content %>
         </p>
+        <%= link_to new_message_path, class: 'btn button' do %>
+              <i data-feather="message-circle"></i>
+            <% end %>
         <div style="text-align: right;">
           <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' }, style: "background-color: #8A9BB8; color: white; border-radius: 5px;" %>
         </div>
@@ -42,6 +45,9 @@
           <strong>Message Content:</strong>
           <%= message.content %>
         </p>
+        <%= link_to new_message_path, class: 'btn button' do %>
+              <i data-feather="message-circle"></i>
+            <% end %>
         <div style="text-align: right;">
           <%= button_to 'Remove', message_path(message), method: :delete, data: { confirm: 'Are you sure?' }, style: "background-color: #8A9BB8; color: white; border-radius: 5px;" %>
         </div>
