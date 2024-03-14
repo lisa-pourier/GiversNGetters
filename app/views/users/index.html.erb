@@ -1,61 +1,62 @@
 <%# <h1>this is the users index page</h1> %>
 
-<%# <div class="container-title">
-
-</div> %>
+<%# <div class="container-title"></div> %>
 
 <div class="container">
-<div class="centered-header">
-  <h3>All Givers & Getters</h3>
-</div>
+  <div class="centered-header">
+    <h3>All Givers & Getters</h3>
+  </div>
 
-
-<div class="users-search">
+  <div class="users-search">
     <%= form_with(url: search_path, method: :get, local: true, html: { class: "users-search-bar" }) do %>
       <%= text_field_tag :query, params[:query], placeholder: "Search All Givers&Getters...🔍", class: "users-search-input" %>
       <%= submit_tag "Search" %>
     <% end %>
   </div>
 
+  <% @users.each do |user| %>
+    <div class="container">
+      <div class="usercard">
+        <div class="flex-container align-items-start">
 
-<div class="container">
+          <div class="usercardleft flex-item-left">
+            <div class="profile-pic-show">
+              <%= image_tag (user.avatar.attached? ? url_for(user.avatar) : 'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif'), alt: user.username, size: "200x200" %>
+              <p><strong><%= user.username %></strong></p>
+            </div>
+              <div class="user-profile-card">
+                 <%= link_to "More About Giver", user_path(user), class: "btn button-blue" %>
+              </div>
 
-<% @users.each do |user| %>
+            <div class="select-user">
 
-    <div class="usercard">
-      <div class="flex-container">
+            </div>
+          </div>
 
-        <div class="usercardleft flex-item-left">
-        <%# <h2>Username</h2> %>
-       <div class="profile-pic-index">
-          <%= image_tag (user.avatar.attached? ? url_for(user.avatar) : 'https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif'), alt: user.username, size: "200x200" %>
-      </div>
-          <p><strong><%= user.username %></strong></p>
-           <%=link_to "More About Giver", user_path(user)%>
-        </div>
-
-        <div class="usercardright flex-item-right">
-          <%# <h2>Userprofile</h2> %>
+          <div class="usercardright flex-item-right">
             <h3>About Me</h3>
             <p><%= user.about_me %></p>
 
             <h3>Expertise</h3>
             <% if user.expertises.count > 0 %>
               <% user.expertises.each do |expertise| %>
-              <p><%= expertise.name %></p>
+                <p><i data-feather="award" class="dark-blue"></i><%= expertise.name %></p>
               <% end %>
             <% end %>
 
             <h3>Interest</h3>
             <% if user.interest_expertises.count > 0 %>
               <% user.interest_expertises.each do |interest| %>
-              <p><i data-feather="fe-star-o"><%= interest.name %></p>
+                <p><i data-feather="bookmark" class="light-blue"></i><%= interest.name %></p>
               <% end %>
             <% end %>
 
             <h3>Reviews</h3>
-            <p>⭐️⭐️⭐️⭐️⭐️</p>
-
+            <div class="review-content">
+              <p class="star-padding">⭐️⭐️⭐️⭐️⭐️</p>
+              <p>this helper was awesome!!!</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
