@@ -3,11 +3,11 @@
   <h3>All Requests</h3>
 
   <div class="requests-search-bar">
-<%= form_with(url: requests_path, method: :get, local: true, html: { class: "requests-search-bar" }) do %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search All Requests... 🔍", class: "requests-search-input" %>
-  <%= submit_tag "Search" %>
-<% end %>
-</div>
+    <%= form_with(url: requests_path, method: :get, local: true, html: { class: "requests-search-bar" }) do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search All Requests... 🔍", class: "requests-search-input" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
 
 
 
@@ -28,3 +28,7 @@
   <div class="request-buttons">
     <%= link_to 'Back to Home Page', root_path, class: 'secondary-button' %>
   </div>
+</div>
+
+
+<%# just random comment %>
