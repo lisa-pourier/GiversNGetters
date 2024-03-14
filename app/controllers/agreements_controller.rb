@@ -17,6 +17,20 @@ class AgreementsController < ApplicationController
     redirect_to action: 'dashboard', controller: "pages"
   end
 
+  def pending
+    @agreement = Agreement.find(params[:id])
+    @agreement.status = 'pending'
+    @agreement.save
+    redirect_to action: 'dashboard', controller: "pages"
+  end
+
+  def completed
+    @agreement = Agreement.find(params[:id])
+    @agreement.status = 'completed'
+    @agreement.save
+    redirect_to action: 'dashboard', controller: "pages"
+  end
+
   def index
     @agreements = Agreement.all
     render template: '/dashboard'

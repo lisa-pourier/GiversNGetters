@@ -12,6 +12,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @current_user = current_user
+    @requests_unassigned = current_user.requests.filter { |request| request.agreements.empty? }
     # @agreements_submitted = current_user.agreements
     # @agreements_received = current_user.requests.flat_map do |request|
     #   request.agreements
