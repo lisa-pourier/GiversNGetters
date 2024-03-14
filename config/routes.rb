@@ -37,5 +37,7 @@ Rails.application.routes.draw do
   get 'privacy', to: 'pages#privacy', as: :privacy
 
   # get '/my_agreements', to: 'agreements#my_agreements', as: 'my_agreements'
+  resources :chats, only: [:index, :show, :new, :create, :destroy]
+  get 'chat/:sender_id/:receiver_id', to: 'chats#show', as: 'user_chat'
 
 end
